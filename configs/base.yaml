@@ -1,0 +1,22 @@
+# Shared hyperparameters across all 6 conditions.
+# Each condition config inherits these and overrides only fusion_type.
+
+data:
+  processed_dir: data/processed
+
+dataloader:
+  batch_size:  64
+  num_workers: 4
+  seed:        42
+
+training:
+  num_epochs:     20
+  lr:             1e-4
+  roberta_lr:     1e-5
+  lambda_mse:     0.1
+  patience:       3
+  checkpoint_dir: logs/checkpoints
+
+model:
+  model_dim: 768
+  dropout: 0.1
